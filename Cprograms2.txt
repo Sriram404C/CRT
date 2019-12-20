@@ -1,0 +1,396 @@
+#include<stdio.h>
+int main()
+{
+	char ch;
+	puts("Enter a character:");
+	ch = getchar();
+	printf("Entered character is:");
+	putchar(ch);
+	
+	return 0;
+}
+===========================================
+int main()
+{	
+	char name[30];
+	puts("Enter your name:");
+	scanf("%[^\n]s",&name);
+	puts("your name is: ");
+	puts(name);
+	
+	return 0;
+}
+===========================================
+#include <stdio.h>
+#define func main
+int func() 
+{
+    char ch;
+    puts("Enter a character");
+    ch = getc(stdin);
+    fflush(stdin);
+    puts("The entered character is:");
+    putc(ch,stdout);
+
+    return 0;
+}
+===========================================
+#include<stdio.h>
+int main()
+{	
+	int x,y,a,b;
+	x=scanf("%d %d",&a,&b);
+	y=printf("%d , %d",a,b);
+	printf("x value is %d",x);
+	printf("y value is %d",y);
+	
+	return 0;
+}
+==========================================
+//Accept 2 digit number, if both digits same display 0, display diff b/w digits
+#include<stdio.h>
+int main()
+{	
+	int x,rem=0;
+	printf("Enter Number: \n");
+	scanf("%2d",&x);
+	printf("%d",x/10-x%10);
+	return 0;
+}
+==================================================
+#include <stdio.h>
+#define func main
+int func() 
+{
+    int x=10;
+    printf("%d\n",x);
+    printf("%d\n",x++);
+    printf("%d\n",++x);
+    return 0;
+}
+==============
+#include <stdio.h>
+#define func main
+int func() 
+{
+    printf("%d",printf("Campus"));
+    return 0;
+}
+====================
+#include <stdio.h>
+#define func main
+int func() 
+{
+   int a;
+   printf("%d",scanf("%d",&a));
+   return 0;
+}
+=====================
+#include <stdio.h>
+#define func main
+int func() 
+{
+   int a,b;
+   printf("%d",scanf("%d %d",&a,&b));
+   return 0;
+}
+=======================
+//Accept 3 Numbers Find Largest
+#include<stdio.h>
+int main()
+{
+	int x,y,z;
+	printf("\nEnter 3 Numbers:");
+	scanf("%d %d %d",&x,&y,&z);
+	
+	if(x>y && x>z) {
+		printf("\n %d is largest",x);
+	}
+	else if(y>x && y>z){
+		printf("\n %d is largest",y);
+	}
+	else {
+		printf("\n %d is largest",z);
+	}
+	return 0;
+}
+===================================
+//Accept H of person and display following based on H
+#include<stdio.h>
+int main()
+{
+	int h;
+	printf("\nEnter Height of Person:");
+	scanf("%d",&h);
+	if(h<=150) {
+		printf("\nDwarf");
+	}
+	else if(h>150 && h<=190){
+		if(h>150 && h<=165){
+			printf("\n Average Height");
+		}
+		else if(h>165 && h<=190) {
+			printf("\n Tall");
+		}
+	}
+	else if(h>190) {
+		printf("\nAbnormal Height");
+	}
+}
+=====================================
+//Accept a number from user and display following comments
+#include<stdio.h>
+int main()
+{
+	int n;
+	printf("\nEnter n value:");
+	scanf("%d",&n);
+	if(n%3==0 && n%5!=0){
+		printf("\nFIZZ");
+	}
+	else if(n%5==0 && n%3!=0)
+	{
+		printf("\nBIZZ");
+	}
+	else if(n%3==0 && n%5==0){
+		printf("\n FIZZBIZZ");
+	}
+	else if(n%3!=0 && n%5!=0){
+		printf("\n %d",n);
+	}
+}
+====================================
+Accept 3 sides of triangle and find what type of triangle it is SCALENE, ISOSCELES or Equilateral
+//Accept a number from user and display following comments
+#include<stdio.h>
+int main()
+{
+	int s1,s2,s3;
+	printf("\n Enter Sides of the Triangle:");
+	scanf("%d %d %d",&s1,&s2,&s3);
+	if(s1==s2 && s1==s3 && s2==s3){
+		printf("\nIt is an Equilateral Triangle");
+	}
+	else if(s1==s2 || s1==s3 || s2==s3) {
+		printf("\nIt is an Isosceles Triangle");
+	}
+	else if(s1!=s2 || s1!=s3 || s2!=s3){
+		printf("\nIt is a Scalene Triangle");
+	}
+}
+===================================
+//Accept two Numbers from User and do arithmetic operations on it using Switch Case
+#include<stdio.h>
+int main()
+{
+	int c;
+	int a,b;
+	printf("\nEnter A and B:");
+	scanf("%d %d",&a,&b);
+	printf("\nEnter your Option  \n 1.Add \n2.Subtract \n 3.Divide \n 4.Multiply \n 5.Remainder \n ");
+	scanf("%d",&c);
+	switch(c)
+	{
+		case 1: printf("You Chose Addition\n");
+				printf("Sum: %d",a+b);
+				break;
+		case 2: printf("You Chose Subtraction\n");
+				printf("Diff: %d",a-b);
+				break;
+		case 3: printf("You Chose Division\n");
+				printf("Quotient: %f",(a/b));
+				break;
+		case 4: printf("You Chose Multiplication\n");
+				printf("Product: %d",a*b);
+				break;
+		case 5: printf("You chose Modulus\n");
+				printf("Remainder: %d",a%b);
+				break;
+		default: printf("\nWrong Option Selected");
+				break;						
+	}
+}
+============================
+//ATM Transcations
+#include<stdio.h>
+int main()
+{
+	int bal=1000,pin,op,amount=0;
+	char ch;
+	printf("\nEnter PIN");
+	scanf("%d",&pin);
+	if(pin==1234){
+		
+		MENU:
+		printf("\nWelcome to PD Bank");
+		printf("-------------------------\n");
+		printf("\n1.Balance Enquiry\n2.Deposit\n3.Withdraw\n4.Exit\n");
+		printf("-------------------------\n");
+		printf("\nOption:");
+		scanf("%d",&op);
+		switch(op){
+			case 1: printf("\n Balance: %d",bal);
+					printf("\nDo you want to continue<y/n>:");
+					scanf("%c",&ch);
+					if(ch=='y'){
+					goto MENU;
+				}
+					break;
+			case 2:
+				printf("\nEnter Amount to deposit:");
+				scanf("%d",&amount);
+				if(amount%100!=0)
+				printf("\nEnter Amount in Denominations of 100");
+				else
+				{
+				if((bal-amount)<500)
+				printf("\nMinimum Value Reached");
+				else
+				bal=bal+amount;
+				}
+				printf("\nDo you want to continue<y/n>:");
+				scanf("%c",&ch);
+				if(ch=='y'){
+					goto MENU;
+				}
+				break;
+			case 3:
+					printf("\nEnter Amount to Withdraw:");
+					scanf("%d",&amount);
+					if(amount%100!=0)
+					printf("\nEnter Amount in Denominations of 100");
+					else{
+					if((bal-amount)<500)
+					printf("\nMinimum Value Reached");
+					else						
+					bal=bal-amount;
+					printf("\nDo you want to continue<y/n>:");
+					scanf("%c",&ch);
+					if(ch=='y'){
+					goto MENU;
+				}
+					break;
+			case 4: printf("\nThank You For Visiting ATM");
+					break;
+				}
+	}
+}
+	else {
+		printf("\n Invalid PIN Entered");
+	}
+}
+==============================================================================================
+//Accept two Numbers from User and do Russian Multiplication on it
+#include<stdio.h>
+int main()
+{
+	int a,b;
+	printf("\nEnter two Values:");
+	scanf("%d %d",&a,&b);
+	int m,n,r=0;
+	m=a; n=b;
+	while(m>0){
+		if(m%2!=0)
+		{
+			r+=n;
+		}
+	m/=2;
+	n*=2;
+	}
+	printf("\n%d * %d = %d",a,b,r);
+	return 0;
+}
+======================================
+//Collatz Number
+#include<stdio.h>
+int main()
+{
+	int n,count=0;
+	printf("\nEnter a number:");
+	scanf("%d",&n);
+	while(n!=1) { if(count==10) {
+		printf("\nSequence Did not reach 1");
+		break;
+	}
+	else {
+		if(n%2==0) {
+		n=n/2;
+		printf("%d \t",n);
+		count++;
+		}
+		else{
+			n=(n*3)+1;
+			printf("%d \t",n);
+			count++;
+		}
+	}
+	}
+}
+=====================================================================
+//Program to round off given 3 numbers and find their sum
+#include<stdio.h>
+int main()
+{
+	int a,b,c,m,n;
+	scanf("%d %d %d",&a,&b,&c);
+		m=a%10;
+		n=a/10;
+		if(m<5){
+			a=n*10;
+		}
+		else
+		a=(n+1)*10;
+		
+		m=b%10;
+		n=b/10;
+		if(m<5){
+			b=n*10;
+		}
+		else
+		b=(n+1)*10;
+	
+		m=c%10;
+		n=c/10;
+		if(m<5){
+			c=n*10;
+		}
+		else
+		c=(n+1)*10;
+	
+	int sum=a+b+c;
+	printf("%d",sum);
+	
+	
+}
+=====================================================================================\
+DAY 10
+//Armstrong Number program
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int main()
+{
+	int n=0,n1=0,r=0,rem=0,count=0;
+	printf("\nEnter a Number:");
+	scanf("%d",&n);
+	n1=n;
+	while(n!=0)
+	{
+		rem=n%10;
+		r=r+pow(rem,3);
+		n=n/10;
+		count++;
+	}
+	if(r==n1 && count==3.){
+		printf("\n%d is Armstrong Number",n1);
+	}
+	else if(count!=3)
+	{
+		printf("\n%d is not 3 digit number",n1);
+	}
+	else {
+		printf("\n%d is not Armstrong Number",n1);
+	}
+	return 0;
+}
+====================================================================
